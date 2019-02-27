@@ -1,4 +1,6 @@
+import { PeticionesService } from './../peticiones.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-videos',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideosComponent implements OnInit {
 
-  constructor() { }
+  textoCaja = '';
+  constructor(public service: PeticionesService) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.service.primeraPeticionVideo();
+  }
 }
