@@ -7,11 +7,11 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  fijarPie(){
-    let alturaPie = $("app-pie").height();
-    let alturaCabecera = $("app-cabecera").height();
-    let alturaContenido = $(".contenido").height();
-    let alturaVentana = $(window).height();
-    return (alturaContenido > alturaVentana-alturaPie-alturaCabecera) ? false : true;
+  fijarPie() {
+    const alturaPie = $('app-pie').height();
+    const alturaCabecera = $('app-cabecera').height();
+    const alturaContenido = $('.contenido').height();
+    const alturaVentana = $(window).height();
+    return alturaContenido > alturaVentana - alturaPie - alturaCabecera ? false : true;
   }
 }
