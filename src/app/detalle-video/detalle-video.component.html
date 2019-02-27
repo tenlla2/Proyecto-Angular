@@ -1,3 +1,35 @@
-<p>
-  detalle-video works!
-</p>
+<div class="container-fluid" id="contenedor">
+  <div class="row justify-content-center mt-3">
+    <div class="col-auto">
+      <iframe
+        width="1280"
+        height="720"
+        [src]="srcEmbed()"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <h5>{{ this.service.videoActual.title }}</h5>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <p><strong>Likes: </strong>{{ this.service.videoActual.likes }}</p>
+    </div>
+    <div class="col-auto">
+        <p><strong>Reproducciones: </strong>{{ this.service.videoActual.views }}</p>
+      </div>
+    <div class="col-auto">
+      <p><strong>Dislikes: </strong>{{ this.service.videoActual.dislikes }}</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <p>{{ this.service.videoActual.description | filtroTexto: 1000 }}</p>
+    </div>
+  </div>
+</div>

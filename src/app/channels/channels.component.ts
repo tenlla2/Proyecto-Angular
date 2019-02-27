@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeticionesService } from './../peticiones.service';
 
 @Component({
   selector: 'app-channels',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelsComponent implements OnInit {
 
-  constructor() { }
+  textoCaja = '';
+  constructor(public service: PeticionesService) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.service.primeraPeticionCanal();
+  }
 }

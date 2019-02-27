@@ -1,3 +1,60 @@
-<p>
-  channels works!
-</p>
+<div class="row justify-content-center mt-3">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm mb-3">
+        <div class="card-body row no-gutters align-items-center p-0">
+          <div class="col">
+            <input
+              class="form-control form-control-lg form-control-borderless"
+              type="text"
+              placeholder="Search..."
+              name="search"
+              [(ngModel)]="textoCaja"
+            />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button class="btn btn-lg text-light" id="searchButton" (click)="service.buscarCanal(textoCaja)">Search</button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-2"></div>
+    <div class="col">
+      <div class="row">
+        <div class="col-4 mb-3" *ngFor="let channel of service.canales">
+          <div class="card">
+            <img
+              src="{{channel.snippet.thumbnails.high.url}}"
+              alt=""
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <h5 class="card-title">{{channel.snippet.title | filtroTexto: 40}}</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">{{channel.snippet.description | filtroTexto: 90}}</div>
+              </div>
+              <div class="row">
+                <div class="col-auto">
+                    <a routerLink="/channels/{{channel.id.channelId}}" class="btn btn-primary mt-4">Ver más</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row justify-content-center" *ngIf="service.canales.length > 0">
+    <div class="col-auto">
+      <div class="btn btn-primary" id="more" (click)="service.nuevaPeticionCanal()">More</div>
+    </div>
+  </div>

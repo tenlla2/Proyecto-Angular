@@ -11,6 +11,7 @@ import { ChannelsComponent } from './channels/channels.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { FiltroNombrePipe } from './filtro-nombre.pipe';
 import { DetalleVideoComponent } from './detalle-video/detalle-video.component';
+import { DetalleCanalComponent } from './detalle-canal/detalle-canal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetalleVideoComponent } from './detalle-video/detalle-video.component';
     ChannelsComponent,
     PlaylistsComponent,
     FiltroNombrePipe,
-    DetalleVideoComponent
+    DetalleVideoComponent,
+    DetalleCanalComponent
   ],
   imports: [
     BrowserModule,
